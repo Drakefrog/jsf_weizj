@@ -1,31 +1,79 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      >
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-<title>Login</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>登陆</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet"></link>
+	<link href="css/font-awesome.min.css" rel="stylesheet"></link>
+	<link href="css/font-open-sans.css" rel="stylesheet"></link>
+	<link href="css/style.css" rel="stylesheet"></link>
+	<link href="css/style-responsive.css" rel="stylesheet"></link>
+	<link href="css/css" rel="stylesheet" type="text/css" />
 </h:head>
 <h:body>
-<h3><font color="red">密码错误或者用户不存在</font></h3>
-<h:form>
- 	<h3>Please enter your name and password.</h3>
- 			<table>
- 				<tr>
- 					<td>Name:</td>
- 					<td><h:inputText value="#{userBean.name}" /></td>
- 				</tr>
-	 			<tr>
-					<td>Password:</td>
- 					<td><h:inputSecret id ="pwd" value="#{userBean.pwd}" /></td><div style="color:red"><h:message id="message" for="pwd"/></div>
- 				</tr>
- 			</table>
- 			
- 	<p><h:commandButton value="Login" action="#{userBean.VerifyPassword()}"/></p>
- 	 <h:commandLink  id="zhuche" value="注册" action="register" >
-     </h:commandLink><h3>          </h3>
-     <h:commandLink  id="wangji" value="  忘记密码" action="wangji" > </h:commandLink>
-</h:form>
- 	</h:body>
- </html>
+	<div class="login-container">
+		<div class="middle-login">
+			<div class="block-web">
+				<div class="head">
+					<h3 class="text-center">会员登陆</h3>
+				</div>
+				<div style="background: #fff;">
+					<h:form
+						action="http://canvaskite.com/marketplace/webpro/dark-theme/index.html"
+						class="form-horizontal" style="margin-bottom: 0px !important;">
+						<div class="content">
+							<h4 class="title">登陆</h4>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user"></i></span>
+										<input type="text" class="form-control"
+											value="#{userBean.name}" placeholder="用户名" />
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+										<input type="password" class="form-control" id="pwd"
+											value="#{userBean.pwd}" placeholder="密码" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="foot">
+						<font>您输入的用户名号或密码不正确</font>
+							<span class="btn btn-default"><h:commandLink id="zhuche"
+									value="注册" action="register">
+								</h:commandLink></span>
+							<h:commandButton type="submit" data-dismiss="modal"
+								class="btn btn-primary" action="#{userBean.VerifyPassword()}"
+								value="登陆"></h:commandButton>
+								
+						</div>
+					</h:form>
+				</div>
+			</div>
+			<div class="text-center out-links">
+				<a
+					href="./Responsive Admin Template_files/Responsive Admin Template.htm">©
+					Copyright ZhangHongfei 2014. </a>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-2.0.2.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/accordion.js"></script>
+	<script src="js/common-script.js"></script>
+	<script src="js/jquery.nicescroll.js"></script>
+</h:body>
+</html>

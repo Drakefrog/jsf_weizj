@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" 
-	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta charset="utf-8" />
@@ -18,6 +18,7 @@
 </head>
 <!-- 页面布局中中部右侧middle_right部分的实现  -->
 <body>
+
 	<div class="login-container">
 		<div class="middle-login" style="top: 30%;">
 			<div class="block-web">
@@ -27,103 +28,103 @@
 				<div style="background: #fff;">
 
 					<h:form style="margin-bottom: 0px !important;"
-						class="form-horizontal"
-						action="http://canvaskite.com/marketplace/webpro/dark-theme/index.html">
+						class="form-horizontal">
 						<div class="content">
 							<h4 class="title">*免费注册</h4>
+							<h:message id="message" for="pwd" />
 
-							<fieldset>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-user"></i></span>
-											<input type="text" placeholder="用户名" id="nmae"
-												class="form-control" value="#{userBean.name}" />
-										</div>
+
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user"></i></span>
+										<h:inputText type="text" placeholder="用户名" id="nmae"
+											class="form-control" value="#{userBean.name}" />
 									</div>
 								</div>
+							</div>
 
-								<div class="form-group">
-									<div class="col-sm-12">
-										<div class="input-group">
-											<span class="input-group-addon"><i
-												class="fa fa-envelope"></i></span> <input type="text"
-												placeholder="邮箱" id="email address" class="form-control"
-												value="#{userBean.id}" />
-										</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div class="input-group">
+										<span class="input-group-addon"><i
+											class="fa fa-envelope"></i></span> <h:inputText 
+											placeholder="邮箱" id="id" class="form-control"
+											value="#{userBean.id}" />
 									</div>
 								</div>
+							</div>
 
-								<div class="form-group">
-									<div class="col-sm-12">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-											<h:inputSecret type="password" placeholder="请输入密码" id="pwd"
-												class="form-control" value="#{userBean.pwd}" required="true"
-												validator="#{userBean.validate}" />
-										</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+										<h:inputSecret  placeholder="请输入密码" id="pwd"
+											class="form-control" value="#{userBean.pwd}" required="true"
+											validator="#{userBean.validate}" />
 									</div>
 								</div>
+							</div>
 
-								<div class="form-group">
-									<div class="col-sm-12">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-											<h:inputSecret type="password" placeholder="请重复密码" id="pwda"
-												class="form-control" value="#{userBean.pwda}"
-												required="true" validator="#{userBean.validate}" />
-										</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+										<h:inputSecret  placeholder="请重复密码" id="pwda"
+											class="form-control" value="#{userBean.pwda}" required="true"
+											validator="#{userBean.validate}" />
 									</div>
 								</div>
-
-							</fieldset>
-							<hr/>
-								<fieldset>
-									<div class="form-group">
-										<div class="col-sm-6">
-											<label class="input"> <input class="inputWidth"
-												type="text" placeholder="姓氏" name="firstname"
-												value="#{userBean.home}" />
-											</label>
-										</div>
-										<div class="col-sm-6">
-											<label class="input"> <input class="inputWidth"
-												type="text" placeholder="名字" name="lastname"
-												value="#{userBean.school}" />
-											</label>
-										</div>
-										<div class="col-sm-12">
-											<label class="select"> <select name="gender">
-													<option disabled="" selected="" value="0">性别</option>
-													<option value="1">男</option>
-													<option value="2">女</option>
-													<option value="3">你猜？</option>
-											</select> <i></i>
-											</label>
-										</div>
+							</div>
 
 
-									</div>
+							<hr />
 
-									<div class="form-group">
-										<div class="col-sm-12">
-											<label class="checkbox"> <input type="checkbox"
-												id="subscription" name="subscription"/> <span
-													class="custom-checkbox"> </span><i></i>我同意接受订阅消息</label>
-										</div>
-									</div>
+							<div class="form-group">
+								<div class="col-sm-6">
+									<label class="input"> <h:inputText class="inputWidth"
+										 placeholder="姓氏" name="firstname" id="home"
+										value="#{userBean.home}" />
+									</label>
+								</div>
+								<div class="col-sm-6">
+									<label class="input"> <h:inputText class="inputWidth"
+										 placeholder="名字" name="lastname" id="school"
+										value="#{userBean.school}" />
+									</label>
+								</div>
+								<div class="col-sm-12">
+									<label class="select"> <select name="gender">
+											<option disabled="disabled" selected="selected" value="0">性别</option>
+											<option value="1">男</option>
+											<option value="2">女</option>
+											<option value="3">你猜？</option>
+									</select> <i></i>
+									</label>
+								</div>
 
-									<div class="form-group">
-										<div class="col-sm-12">
-											<label class="checkbox"> <input type="checkbox"
-												id="terms" name="terms"/> <span
-													class="custom-checkbox"></span> <i></i>我同意<a
-													data-target="#myModal" data-toggle="modal"
-													href="http://canvaskite.com/marketplace/webpro/dark-theme/register.html#">用户协议</a></label>
-										</div>
-									</div>
 
-								</fieldset>
+							</div>
+
+							 <div class="form-group">
+								<div class="col-sm-12">
+									<label class="checkbox"> <input type="checkbox"
+										id="subscription" name="subscription" /> <span
+										class="custom-checkbox"> </span><i></i>我同意接受订阅消息
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-12">
+									<label class="checkbox"> <input type="checkbox"
+										id="terms" name="terms" /> <span class="custom-checkbox"></span>
+										<i></i>我同意<a data-target="#myModal" data-toggle="modal"
+										href="http://canvaskite.com/marketplace/webpro/dark-theme/register.html#">用户协议</a></label>
+								</div>
+							</div> 
+
+
 						</div>
 
 
@@ -131,8 +132,8 @@
 
 						<div class="register-bottom">
 							<h:commandButton class="btn btn-primary" data-dismiss="modal"
-								type="submit" value="注册" action="#{userBean.AddUser}"></h:commandButton><strong>用户名已存在</strong>
-								
+								 value="注册" action="#{userBean.AddUser}"></h:commandButton><strong>用户名已存在</strong>
+
 						</div>
 					</h:form>
 
@@ -145,6 +146,7 @@
 			</div>
 		</div>
 	</div>
+
 
 </body>
 </html>
